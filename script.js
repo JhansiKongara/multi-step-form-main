@@ -14,8 +14,7 @@ let isFirstPageIsValidated;
 let isSecondPageIsValidated;
 let isThirdPageIsValidated;
 let isFourthPageIsValidated;
-let currentPage = 0; // Start at the first page (index 0)
-const pages = ["personal", "plan", "pick", "finish", "thankyou"];
+
 function showPage() {
   validateName();
   validateEmail();
@@ -70,45 +69,80 @@ function showPage() {
   if (isFourthPageIsValidated) {
     document.getElementById("finish").style.display = "none";
     document.getElementById("thankyou").style.display = "block";
-    document.getElementById("stepnumber3").style.backgroundColor =
-      "hsl(243, 100%, 62%)";
-    document.getElementById("stepnumber3").style.color = "hsl(0, 0%, 100%)";
-    document.getElementById("stepnumber3").style.fontFamily = "myFont";
   }
-  document.getElementById(pages[currentPage]).style.display = "none";
-  document.getElementById("thankyou").style.display = "none";
-  currentPage++; // Move to the next page
-
-  // Check if we've reached the end
-  if (currentPage < pages.length) {
-    document.getElementById(pages[currentPage]).style.display = "block"; // Show next page
-  }
-
-  // Show or hide the Go Back button
-  document.getElementById("goBack").style.visibility =
-    currentPage > 0 ? "visible" : "hidden";
 }
+// if (currentPage === 1) {
+//   document.getElementById("personal").style.display = "none";
+//   document.getElementById("plan").style.display = "block";
+//   document.getElementById("thankyou").style.display = "none";
+//   pageHistory.push(currentPage);
+//   currentPage++;
+// } else if (currentPage === 2) {
+//   document.getElementById("plan").style.display = "none";
+//   document.getElementById("pick").style.display = "block";
+//   document.getElementById("thankyou").style.display = "none";
+//   pageHistory.push(currentPage);
+//   currentPage++;
+// } else if (currentPage === 3) {
+//   document.getElementById("pick").style.display = "none";
+//   document.getElementById("finish").style.display = "block";
+//   document.getElementById("thankyou").style.display = "none";
+//   pageHistory.push(currentPage);
+//   currentPage++;
+// } else if (currentPage === 4) {
+//   document.getElementById("finish").style.display = "none";
+//   document.getElementById("thankyou").style.display = "block";
+//   currentPage++;
+// }
 
-function goBack() {
-  if (currentPage > 0) {
-    // Hide current page
-    document.getElementById(pages[currentPage]).style.display = "none";
-    currentPage--; // Move to the previous page
-    document.getElementById(pages[currentPage]).style.display = "block"; // Show previous page
-  }
+// Show the Go Back button when not on the first page
+// document.getElementById("goBack").style.visibility =
+//   currentPage > 1 ? "visible" : "hidden";
 
-  if (currentPage > 0) {
-  }
-  // Show or hide the Go Back button
-  document.getElementById("goBack").style.visibility =
-    currentPage > 0 ? "visible" : "hidden";
-}
+// function goBack() {
+//   if (pageHistory.length > 0) {
+//     // Get the last page from the history
+//     const lastPage = pageHistory.pop();
+
+//     // Hide the current page
+//     if (currentPage === 2) {
+//       document.getElementById("plan").style.display = "none";
+//       document.getElementById("personal").style.display = "block";
+//       document.getElementById("finish").style.display = "none";
+//       updateStepStyles(1, false);
+//     } else if (currentPage === 3) {
+//       document.getElementById("pick").style.display = "none";
+//       document.getElementById("plan").style.display = "block";
+//       document.getElementById("finish").style.display = "none";
+//       //   document.getElementById("thankyou").style.display = "none";
+//       updateStepStyles(2, false);
+//     } else if (currentPage === 4) {
+//       // Here we are going back from Finish page
+//       document.getElementById("finish").style.display = "none"; // Hide Finish page
+//       document.getElementById("pick").style.display = "block"; // Show Pick page
+//       //   document.getElementById("thankyou").style.display = "none";
+//       currentPage = 3; // Set currentPage to Pick page
+//     } else if (currentPage === 5) {
+//       // Going back from "Thank You" page
+//       document.getElementById("thankyou").style.display = "none"; // Hide Thank You page
+//       document.getElementById("finish").style.display = "block"; // Show Finish page
+//       currentPage = 4; // Set currentPage to Finish page
+//     }
+
+//     // Update the current page to the last one
+//     currentPage = lastPage;
+
+//     // Update the "Go Back" button visibility
+//     document.getElementById("goBack").style.visibility =
+//       pageHistory.length > 0 ? "visible" : "hidden";
+//   }
+// }
 
 // Helper function to update step styles
 function updateStepStyles(stepNumber, isActive) {
   const stepElement = document.getElementById(`stepnumber${stepNumber}`);
   if (isActive) {
-    stepElement.style.backgroundColor = "hsl(206, 94%, 87%)";
+    stepElement.style.backgroundColor = "hsl(229, 24%, 87%)";
     stepElement.style.color = "hsl(213, 96%, 18%)";
     stepElement.style.fontFamily = "myFont";
   } else {
