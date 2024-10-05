@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("number").style.backgroundColor =
+          "hsl(206, 94%, 87%)";
+        document.getElementById("number").style.color = "hsl(213, 96%, 18%)";
+      });
+    </script>
+    <div class="form-container">
+      <div class="image-container">
+        <div class="title-container">
+          <div class="step1-container">
+            <div class="number-container" id="number">1</div>
+            <div class="paragraph-container">
+              <p id="step1">STEP1</p>
+              <p id="content">YOUR INFO</p>
+            </div>
+          </div>
+          <div class="step2-container">
+            <div class="number-container">2</div>
+            <div class="paragraph-container">
+              <p id="step1">STEP2</p>
+              <p id="content">SELECT PLAN</p>
+            </div>
+          </div>
+          <div class="step3-container">
+            <div class="number-container">3</div>
+            <div class="paragraph-container">
+              <p id="step1">STEP3</p>
+              <p id="content">ADD-ONS</p>
+            </div>
+          </div>
+          <div class="step4-container">
+            <div class="number-container">4</div>
+            <div class="paragraph-container">
+              <p id="step1">STEP4</p>
+              <p id="content">SUMMARY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="parent">
+        <!-- CONTAINER -->
+        <div class="content-container">
+          <div class="header-container">
+            <h2>personal info</h2>
+            <p id="description">
+              please provide your name,email address,mobile number
+            </p>
+          </div>
+          <div class="name-container">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="e.g.stephen king" />
+          </div>
+          <div class="email-container">
+            <label for="name">Email Address</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="e.g.stephenking@lorem.com"
+            />
+          </div>
+          <div class="mobile-container">
+            <label for="name">Mobile Number </label>
+            <input type="text" name="name" placeholder="e.g.+1234567890" />
+          </div>
+        </div>
+        <!-- MEMBERSHIP -->
+        <div class="membership-container">
+          <div class="select-header-container">
+            <h2>select your plan</h2>
+            <p id="description">
+              you have the option of monthly or yearly billing.
+            </p>
+          </div>
+          <div class="card-container">
+            <div class="card1">
+              <img src="./assets/images/icon-arcade.svg" />
+
+              <div class="data">
+                <h3>Arcade</h3>
+                <p id="description">$9/mo</p>
+              </div>
+            </div>
+
+            <div class="card2">
+              <img src="./assets/images/icon-advanced.svg" />
+              <div class="data">
+                <h3>Advanced</h3>
+                <p id="description">$12/mo</p>
+              </div>
+            </div>
+            <div class="card3">
+              <img src="./assets/images/icon-pro.svg" />
+              <div class="data">
+                <h3>pro</h3>
+                <p id="description">$15/mo</p>
+              </div>
+            </div>
+          </div>
+          <div class="toggle-container">
+            <h4>Monthly</h4>
+            <center>
+              <input type="checkbox" id="switch" class="checkbox" />
+
+              <label for="switch" class="toggle"> </label>
+            </center>
+            <h4>yearly</h4>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="back">Go Back</button>
+          <button class="next">Next Step</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
